@@ -4,12 +4,12 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Jasmine Spec Runner v2.0.0</title>
 
+  <!-- include jasmine resources here  -->
   <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.0.0/jasmine_favicon.png">
   <link rel="stylesheet" type="text/css" href="lib/jasmine-2.0.0/jasmine.css">
-
   <script type="text/javascript" src="lib/jasmine-2.0.0/jasmine.js"></script>
   <script type="text/javascript" src="lib/jasmine-2.0.0/jasmine-html.js"></script>
-  <!-- TODO: remove? -->
+  <!-- NOTE: this is loaded in the require statement below after all the specs have been loaded -->
   <!--<script type="text/javascript" src="lib/jasmine-2.0.0/boot.js"></script>-->
 
   <!-- include esri/dojo resources here  -->
@@ -43,37 +43,16 @@
     require([
       'spec/imageServiceUtilsSpec.js',
       'spec/geometryUtilsSpec.js',
-      // TODO: add other specs here as you write them
+      //
+      // TODO: load other specs here as you write them
+      //
+      // finally run jasmine
       './lib/jasmine-2.0.0/boot.js'
     ], function() {
-
-      // // jasmine html reporter boilerplate
-      // var jasmineEnv = jasmine.getEnv();
-      // jasmineEnv.updateInterval = 1000;
-
-      // var htmlReporter = new jasmine.HtmlReporter();
-
-      // jasmineEnv.addReporter(htmlReporter);
-
-      // jasmineEnv.specFilter = function(spec) {
-      //   return htmlReporter.specFilter(spec);
-      // };
-
-      // // run specs
-      // jasmineEnv.execute();
+      // nothing to see here
+      // move along
     });
   </script>
-
-
-  <!-- include source files here...
-  <script type="text/javascript" src="src/Player.js"></script>
-  <script type="text/javascript" src="src/Song.js"></script>
--->
-  <!-- include spec files here...
-  <script type="text/javascript" src="spec/SpecHelper.js"></script>
-  <script type="text/javascript" src="spec/PlayerSpec.js"></script>
-  -->
-
 </head>
 
 <body>

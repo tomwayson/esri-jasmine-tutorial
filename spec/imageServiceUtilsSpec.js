@@ -8,7 +8,7 @@ define([
   imageServiceUtils
 ) {
 
-  xdescribe('when setting layer url', function() {
+  describe('when setting layer url', function() {
     var map;
     var url;
 
@@ -48,7 +48,7 @@ define([
         }
       });
       imageServiceUtils.setUrl(map, url, options);
-    });
+    }, 10000);
 
     it("should replace the layer if already added", function(done) {
       var options = {id: 'myLayerId'},
@@ -77,6 +77,6 @@ define([
         }
       });
       imageServiceUtils.setUrl(map, url, options);
-    });
+    }, 10000);
   });
 });
