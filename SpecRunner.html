@@ -9,15 +9,70 @@
 
   <script type="text/javascript" src="lib/jasmine-2.0.0/jasmine.js"></script>
   <script type="text/javascript" src="lib/jasmine-2.0.0/jasmine-html.js"></script>
-  <script type="text/javascript" src="lib/jasmine-2.0.0/boot.js"></script>
+  <!-- TODO: remove? -->
+  <!--<script type="text/javascript" src="lib/jasmine-2.0.0/boot.js"></script>-->
 
-  <!-- include source files here... -->
+  <!-- include esri/dojo resources here  -->
+  <link rel="stylesheet" href="//js.arcgis.com/3.8/js/dojo/dijit/themes/claro/claro.css">
+  <link rel="stylesheet" href="//js.arcgis.com/3.8/js/esri/css/esri.css">
+  <script>
+    // configure dojo loader
+    (function(){
+      var path = location.pathname.replace(/\/[^/]+$/, '/');
+      window.dojoConfig = {
+        parseOnLoad: false,
+        async: true,
+        packages: [
+          {
+            name: "esri-utils",
+            location: path + 'src/esri-utils'
+          },
+          {
+            name: "spec",
+            location: path + 'spec'
+          }
+        ]
+      };
+    }());
+  </script>
+  <script src="//js.arcgis.com/3.8/"></script>
+
+  <!-- require spec modules and start up Jasmine here ... -->
+  <script type="text/javascript">
+    // require spec modules
+    require([
+      'spec/imageServiceUtilsSpec.js',
+      'spec/geometryUtilsSpec.js',
+      // TODO: add other specs here as you write them
+      './lib/jasmine-2.0.0/boot.js'
+    ], function() {
+
+      // // jasmine html reporter boilerplate
+      // var jasmineEnv = jasmine.getEnv();
+      // jasmineEnv.updateInterval = 1000;
+
+      // var htmlReporter = new jasmine.HtmlReporter();
+
+      // jasmineEnv.addReporter(htmlReporter);
+
+      // jasmineEnv.specFilter = function(spec) {
+      //   return htmlReporter.specFilter(spec);
+      // };
+
+      // // run specs
+      // jasmineEnv.execute();
+    });
+  </script>
+
+
+  <!-- include source files here...
   <script type="text/javascript" src="src/Player.js"></script>
   <script type="text/javascript" src="src/Song.js"></script>
-
-  <!-- include spec files here... -->
+-->
+  <!-- include spec files here...
   <script type="text/javascript" src="spec/SpecHelper.js"></script>
   <script type="text/javascript" src="spec/PlayerSpec.js"></script>
+  -->
 
 </head>
 
