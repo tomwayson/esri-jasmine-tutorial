@@ -9,8 +9,7 @@
   <link rel="stylesheet" type="text/css" href="lib/jasmine-2.0.0/jasmine.css">
   <script type="text/javascript" src="lib/jasmine-2.0.0/jasmine.js"></script>
   <script type="text/javascript" src="lib/jasmine-2.0.0/jasmine-html.js"></script>
-  <!-- NOTE: this is loaded in the require statement below after all the specs have been loaded -->
-  <!--<script type="text/javascript" src="lib/jasmine-2.0.0/boot.js"></script>-->
+  <script type="text/javascript" src="lib/jasmine-2.0.0/boot.js"></script>
 
   <!-- include esri/dojo resources here  -->
   <link rel="stylesheet" href="//js.arcgis.com/3.8/js/dojo/dijit/themes/claro/claro.css">
@@ -41,13 +40,11 @@
   <script type="text/javascript">
     // require spec modules
     require([
-      'spec/imageServiceUtilsSpec.js',
-      'spec/geometryUtilsSpec.js',
+      'spec/imageServiceUtilsSpec',
+      'spec/geometryUtilsSpec',
       //
       // TODO: load other specs here as you write them
       //
-      // finally run jasmine
-      './lib/jasmine-2.0.0/boot.js'
     ], function() {
       // nothing to see here
       // move along
